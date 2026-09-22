@@ -3,356 +3,255 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Олимпиады Ижевска 2026/27</title>
-<meta name="description" content="Все даты олимпиад по математике для школьников Ижевска 1–7 классов на сезон 2026/27 в одном месте.">
+<title>Интеллектиум — детский центр развития в Ижевске</title>
+<meta name="description" content="Детский центр развития «Интеллектиум» в Ижевске, ул. Петрова 33Б: ментальная арифметика, олимпиадная математика, математика по школьной программе, русский язык, подготовка к школе. Дети 5–14 лет.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap">
 <style>
+.price s{color:var(--muted);font-weight:500;margin-left:6px}
+.price em{font-style:normal;color:var(--muted);font-weight:500;font-size:14px}
+
 :root{
   --bg:#F3F5FA; --surface:#FFFFFF; --ink:#131C33; --muted:#5A6479; --line:#DDE2EE;
   --brand:#123E8C; --brand-ink:#FFFFFF; --brand-soft:#E3EAF8;
   --sun:#F2B632; --sun-soft:#FFF3D6; --sun-ink:#7A5200;
-  --ok:#1C7A52; --ok-soft:#E1F3EA;
-  --chip:#FFFFFF; --shadow:0 1px 2px rgba(19,28,51,.06),0 8px 24px rgba(19,28,51,.06);
+  --shadow:0 1px 2px rgba(19,28,51,.06),0 8px 24px rgba(19,28,51,.06);
   --display:"Unbounded","Manrope",system-ui,sans-serif;
   --body:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0D1322; --surface:#151D31; --ink:#E8ECF6; --muted:#9AA4BC; --line:#26314B;
-    --brand:#7FA6F0; --brand-ink:#0D1322; --brand-soft:#1B2A4A;
-    --sun:#F2B632; --sun-soft:#3A2F12; --sun-ink:#F6CD6E;
-    --ok:#5FCB98; --ok-soft:#133528; --chip:#151D31; --shadow:none;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0D1322; --surface:#151D31; --ink:#E8ECF6; --muted:#9AA4BC; --line:#26314B;
-  --brand:#7FA6F0; --brand-ink:#0D1322; --brand-soft:#1B2A4A;
-  --sun:#F2B632; --sun-soft:#3A2F12; --sun-ink:#F6CD6E;
-  --ok:#5FCB98; --ok-soft:#133528; --chip:#151D31; --shadow:none;
-}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%}
 a{color:var(--brand)}
-.wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
 :focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:6px}
 
-/* header */
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px;flex-wrap:wrap}
-.logo{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.01em;color:var(--ink);text-decoration:none}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-block:18px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
 .logo span{color:var(--brand)}
-.top a.tel{font-weight:700;text-decoration:none;color:var(--ink);font-variant-numeric:tabular-nums}
-
-.hero{padding-block:28px 12px;display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:end}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
-h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,46px);line-height:1.08;margin:10px 0 14px;text-wrap:balance}
-.lead{font-size:18px;color:var(--muted);margin:0;max-width:56ch}
-.lead b{color:var(--ink)}
-.next{background:var(--brand);color:var(--brand-ink);border-radius:18px;padding:20px 22px;position:relative;overflow:hidden}
-.next::after{content:"∑";position:absolute;right:-6px;bottom:-40px;font-size:150px;line-height:1;opacity:.12;font-family:var(--display)}
-.next small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
-.next .days{font-family:var(--display);font-size:40px;font-weight:700;line-height:1.1;margin-top:6px;font-variant-numeric:tabular-nums}
-.next .what{font-weight:600;margin-top:4px;position:relative;z-index:1}
-
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin-top:18px}
-.legend span{display:inline-flex;align-items:center;gap:7px}
-.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-.dot.ok{background:var(--ok)} .dot.approx{background:var(--sun)}
-
-/* filters */
-.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px;margin-top:18px;border-bottom:1px solid var(--line)}
-.frow{display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center}
-.flabel{font-size:13px;font-weight:700;color:var(--muted);margin-right:2px}
-.group{display:flex;gap:6px;flex-wrap:wrap}
-.chip{appearance:none;border:1px solid var(--line);background:var(--chip);color:var(--ink);font:600 14px/1 var(--body);padding:9px 13px;border-radius:999px;cursor:pointer;font-variant-numeric:tabular-nums}
-.chip:hover{border-color:var(--brand)}
-.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
-.toggle{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;cursor:pointer;color:var(--muted)}
-.toggle input{width:18px;height:18px;accent-color:var(--brand)}
-
-/* list */
-.list{padding-block:10px 20px}
-.month{font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:30px 0 12px;display:flex;align-items:center;gap:12px}
-.month::after{content:"";flex:1;height:1px;background:var(--line)}
-.ev{display:grid;grid-template-columns:92px 1fr;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:10px;box-shadow:var(--shadow)}
-.ev.past{opacity:.55}
-.date{text-align:center;border-radius:12px;padding:10px 4px;background:var(--ok-soft);color:var(--ok);align-self:start}
-.ev.approx .date{background:var(--sun-soft);color:var(--sun-ink)}
-.date .d{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05;font-variant-numeric:tabular-nums}
-.date .m{font-size:13px;font-weight:700}
-.date .t{font-size:12px;font-weight:600;margin-top:4px;line-height:1.25}
-.date.range .d{font-size:15px;line-height:1.25}
-.ev h3{margin:0 0 4px;font-size:18px;line-height:1.3;text-wrap:balance}
-.ev p{margin:6px 0 0;color:var(--muted);font-size:15px}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
-.tag{font-size:13px;font-weight:600;padding:4px 9px;border-radius:7px;background:var(--brand-soft);color:var(--ink)}
-.tag.st-ok{background:var(--ok-soft);color:var(--ok)}
-.tag.st-approx{background:var(--sun-soft);color:var(--sun-ink)}
-.ev .go{display:inline-block;margin-top:12px;font-weight:700;font-size:15px;text-decoration:none}
-.ev .go:hover{text-decoration:underline}
-.empty{background:var(--surface);border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--muted);margin-top:20px}
-
-/* cta */
-.cta{margin-block:34px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
-.cta h2{font-family:var(--display);font-size:24px;line-height:1.2;margin:0 0 8px;text-wrap:balance}
-.cta p{margin:0;color:var(--muted)}
-.btns{display:flex;flex-direction:column;gap:10px}
-.btn{display:block;text-align:center;text-decoration:none;font-weight:800;padding:14px 18px;border-radius:12px;border:2px solid var(--brand)}
-.btn.primary{background:var(--brand);color:var(--brand-ink)}
-.btn.ghost{color:var(--brand)}
-
-/* faq */
-.faq h2{font-family:var(--display);font-size:24px;margin:10px 0 14px}
-details{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:8px}
-summary{cursor:pointer;list-style:none;padding:16px 48px 16px 18px;font-weight:700;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:18px;top:12px;font-size:24px;font-weight:500;color:var(--brand)}
-details[open] summary::after{content:"–"}
-details .a{padding:0 18px 16px;color:var(--muted);max-width:70ch}
-details .a p{margin:0 0 8px}
-
-footer{margin-top:40px;border-top:1px solid var(--line);padding-block:24px 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer b{color:var(--ink)}
-
-@media (max-width:760px){
-  .hero,.cta{grid-template-columns:1fr}
-  .ev{grid-template-columns:74px 1fr;gap:14px;padding:14px}
-  .date .d{font-size:22px}
-  .filters{position:static}
-}
-@media (prefers-reduced-motion:no-preference){.chip{transition:background .15s,border-color .15s}}
-nav.menu{display:flex;gap:16px;flex-wrap:wrap;font-weight:600;font-size:15px}
+nav.menu{display:flex;gap:18px;flex-wrap:wrap;font-weight:600;font-size:15px}
 nav.menu a{color:var(--muted);text-decoration:none}
 nav.menu a:hover{color:var(--brand)}
+.tel{font-weight:800;text-decoration:none;color:var(--ink);font-variant-numeric:tabular-nums}
+
+.hero{padding-block:30px 10px;display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:center}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,48px);line-height:1.08;margin:12px 0 16px;text-wrap:balance}
+.lead{font-size:18px;color:var(--muted);margin:0 0 22px;max-width:52ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:12px;border:2px solid var(--brand)}
+.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.btn.ghost{color:var(--brand)}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow);display:grid;gap:16px}
+.fact{display:flex;gap:14px;align-items:baseline}
+.fact b{font-family:var(--display);font-size:26px;color:var(--brand);line-height:1;min-width:66px;font-variant-numeric:tabular-nums}
+.fact span{color:var(--muted);font-size:15px}
+
+section{padding-block:34px}
+h2{font-family:var(--display);font-size:clamp(22px,3.4vw,30px);line-height:1.15;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card h3{font-size:19px;margin:0 0 6px;line-height:1.25}
+.card .age{display:inline-block;align-self:flex-start;font-size:13px;font-weight:700;padding:4px 9px;border-radius:7px;background:var(--brand-soft);margin-bottom:10px}
+.card p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.card .price{margin-top:auto;font-weight:700;font-size:15px}
+.card .price em{font-style:normal;color:var(--muted);font-weight:500}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.split ul{margin:0;padding-left:20px;color:var(--muted)}
+.split li{margin-bottom:8px}
+
+.olymp{background:var(--brand);color:var(--brand-ink);border-radius:22px;padding:30px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center;position:relative;overflow:hidden}
+.olymp::after{content:"∑";position:absolute;right:10px;bottom:-56px;font-size:180px;line-height:1;opacity:.13;font-family:var(--display)}
+.olymp h2{margin-bottom:10px}
+.olymp p{margin:0;opacity:.9}
+.olymp .btn{border-color:#fff;background:#fff;color:var(--brand);position:relative;z-index:1}
+
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cbox{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.cbox h3{margin:0 0 12px;font-size:18px}
+.cbox p{margin:0 0 10px;color:var(--muted)}
+.cbox a{font-weight:700}
+
+footer{border-top:1px solid var(--line);margin-top:30px;padding-block:24px 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:var(--ink)}
+
+
+.banner{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);margin-top:10px}
+.banner img{display:block;width:100%;height:auto}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.gallery figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.gallery img{display:block;width:100%;height:280px;object-fit:cover}
+.gallery figcaption{padding:12px 14px;font-size:14px;color:var(--muted)}
+.todo{background:var(--sun-soft);color:var(--sun-ink);border:1px dashed var(--sun);border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600;margin-bottom:18px}
+
+@media (max-width:820px){
+  .hero,.split,.olymp,.contacts{grid-template-columns:1fr}
+  .olymp::after{display:none}
+}
 </style>
 </head>
 <body>
-
-
 <div class="wrap">
   <header class="top">
     <a class="logo" href="/">Интеллектиум<span>·</span>Ижевск</a>
-    <nav class="menu"><a href="/">Главная</a><a href="/#napravleniya">Направления</a><a href="/#kontakty">Контакты</a></nav>
+    <nav class="menu">
+      <a href="#napravleniya">Направления</a>
+      <a href="/olimpiady/">Олимпиады</a>
+      <a href="#o-nas">О центре</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
     <a class="tel" href="tel:+79120558606">+7 (912) 055-86-06</a>
   </header>
 
   <section class="hero">
     <div>
-      <div class="eyebrow">Календарь сезона 2026/27</div>
-      <h1>Олимпиады по&nbsp;математике для школьников Ижевска</h1>
-      <p class="lead">Городские, республиканские и всероссийские олимпиады в одном месте — <b>1–7 класс</b>. Выберите класс ребёнка, и мы покажем только подходящие.</p>
-      <div class="legend">
-        <span><i class="dot ok"></i>дата подтверждена организатором</span>
-        <span><i class="dot approx"></i>ориентировочно, по прошлому сезону</span>
+      <div class="eyebrow">Детский центр развития · Ижевск</div>
+      <h1>Учим детей считать, думать и не бояться сложных задач</h1>
+      <p class="lead">Ментальная арифметика, олимпиадная математика, русский язык, чтение, английский и программирование для детей 5–14 лет. Небольшие группы, живые занятия и результат, который видно в школьных тетрадях.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="tel:+79120558606">Записаться на бесплатное занятие</a>
+        <a class="btn ghost" href="https://vk.com/intellectium_izh" target="_blank" rel="noopener">Мы во ВКонтакте</a>
       </div>
     </div>
-    <div class="next" id="next" aria-live="polite">
-      <small>Ближайшая олимпиада</small>
-      <div class="days" id="nextDays">—</div>
-      <div class="what" id="nextWhat"></div>
+    <div class="facts">
+      <div class="fact"><b>10</b><span>лет центру в Ижевске</span></div>
+      <div class="fact"><b>19</b><span>лет преподаватель работает с детьми</span></div>
+      <div class="fact"><b>5–14</b><span>возраст учеников</span></div>
+      <div class="fact"><b>9</b><span>направлений: от счёта до программирования</span></div>
     </div>
   </section>
 
-  <nav class="filters" aria-label="Фильтры">
-    <div class="frow">
-      <div class="group" role="group" aria-label="Класс">
-        <span class="flabel">Класс:</span>
-        <button class="chip" id="g0" data-grade="0" aria-pressed="true">Все</button>
-        <button class="chip" id="g1" data-grade="1" aria-pressed="false">1</button>
-        <button class="chip" id="g2" data-grade="2" aria-pressed="false">2</button>
-        <button class="chip" id="g3" data-grade="3" aria-pressed="false">3</button>
-        <button class="chip" id="g4" data-grade="4" aria-pressed="false">4</button>
-        <button class="chip" id="g5" data-grade="5" aria-pressed="false">5</button>
-        <button class="chip" id="g6" data-grade="6" aria-pressed="false">6</button>
-        <button class="chip" id="g7" data-grade="7" aria-pressed="false">7</button>
-      </div>
-      <div class="group" role="group" aria-label="Формат">
-        <span class="flabel">Где:</span>
-        <button class="chip" id="fAll" data-fmt="all" aria-pressed="true">Везде</button>
-        <button class="chip" id="fCity" data-fmt="city" aria-pressed="false">Очно в Ижевске</button>
-        <button class="chip" id="fSchool" data-fmt="school" aria-pressed="false">В своей школе</button>
-        <button class="chip" id="fOnline" data-fmt="online" aria-pressed="false">Онлайн из дома</button>
-      </div>
-      <label class="toggle"><input type="checkbox" id="showPast"> Показать прошедшие</label>
-    </div>
-  </nav>
+  <div class="banner">
+    <img src="group-nagrady.jpg" alt="Ученики «Интеллектиума» с грамотами после соревнований по ментальной арифметике" width="1277" height="957">
+  </div>
 
-  <main class="list" id="list"></main>
-
-  <section class="cta">
-    <div>
-      <h2>Напомним перед каждым туром</h2>
-      <p>Подпишитесь на сообщество «Интеллектиума» во ВКонтакте: пишем за неделю до регистрации и накануне олимпиады, публикуем разборы задач. А если хотите, чтобы ребёнок шёл на олимпиаду уверенно, — приходите на олимпиадную математику.</p>
+  <section id="napravleniya">
+    <h2>Направления и цены</h2>
+    <p class="sub">Каждое занятие — это работа руками и головой: счёт, разбор задач, игры на внимание. Ребёнок уходит с занятия с результатом, а не с усталостью.</p>
+    <div class="cards">
+      <article class="card">
+        <h3>Ментальная арифметика</h3>
+        <span class="age">6–12 лет</span>
+        <p>Счёт на абакусе и в уме. Развивает внимание, память и скорость мышления. Через несколько месяцев ребёнок считает быстрее взрослого.</p>
+        <div class="price"><b>3 900 ₽</b> <s>4 500 ₽</s><br><em>абонемент на 4 занятия</em></div>
+      </article>
+      <article class="card">
+        <h3>Олимпиадная математика</h3>
+        <span class="age">7–14 лет</span>
+        <p>Нестандартные задачи, логика, умение рассуждать и записывать решение. Готовим к школьным и городским олимпиадам, «Кенгуру» и ЮМШ.</p>
+        <div class="price"><b>3 900 ₽</b> <s>4 500 ₽</s><br><em>абонемент на 4 занятия</em></div>
+      </article>
+      <article class="card">
+        <h3>Математика по школьной программе</h3>
+        <span class="age">5–7 класс</span>
+        <p>Разбираем темы, за которые в школе не успели зацепиться: дроби, проценты, уравнения. Подтягиваем оценки и возвращаем уверенность.</p>
+        <div class="price"><em>Цена и расписание — по телефону</em></div>
+      </article>
+      <article class="card">
+        <h3>Подготовка к школе</h3>
+        <span class="age">5–7 лет</span>
+        <p>Счёт, чтение, письмо и, главное, умение слушать и доводить дело до конца. К первому классу ребёнок приходит спокойным и собранным.</p>
+        <div class="price"><b>5 900 ₽</b> <s>6 500 ₽</s></div>
+      </article>
+      <article class="card">
+        <h3>Русский язык</h3>
+        <span class="age">1–7 класс</span>
+        <p>Правила, которые наконец работают на практике: орфография, разбор слова, грамотное письмо без зубрёжки.</p>
+        <div class="price"><b>3 900 ₽</b> <s>4 500 ₽</s><br><em>абонемент на 4 занятия</em></div>
+      </article>
+      <article class="card">
+        <h3>Эффективное чтение</h3>
+        <span class="age">7–12 лет</span>
+        <p>Скорость чтения и, что важнее, понимание прочитанного. Ребёнок перестаёт буксовать на текстах в учебниках.</p>
+        <div class="price"><b>3 900 ₽</b> <s>4 500 ₽</s><br><em>абонемент на 4 занятия</em></div>
+      </article>
+      <article class="card">
+        <h3>Таблица умножения</h3>
+        <span class="age">2–4 класс</span>
+        <p>Короткий курс, после которого таблица умножения знается не «до первой контрольной», а насовсем.</p>
+        <div class="price"><b>3 900 ₽</b> <s>4 500 ₽</s><br><em>абонемент на 4 занятия</em></div>
+      </article>
+      <article class="card">
+        <h3>Английский язык</h3>
+        <span class="age">7–14 лет</span>
+        <p>Разговорные занятия в группе: лексика, чтение, простые диалоги. Без страха говорить вслух.</p>
+        <div class="price"><b>3 900 ₽</b> <s>4 500 ₽</s><br><em>абонемент на 4 занятия</em></div>
+      </article>
+      <article class="card">
+        <h3>Детское программирование</h3>
+        <span class="age">8–14 лет</span>
+        <p>Первый код и первые проекты: логика, алгоритмы, игры, которые ребёнок написал сам.</p>
+        <div class="price"><b>5 900 ₽</b> <s>6 500 ₽</s></div>
+      </article>
     </div>
-    <div class="btns">
-      <a class="btn primary" href="https://vk.com/intellectium_izh" target="_blank" rel="noopener">Подписаться на напоминания</a>
-      <a class="btn ghost" href="tel:+79120558606">Записаться на пробное занятие</a>
+    <p class="sub" style="margin-top:18px">Первое занятие — <b>вводное и бесплатное</b>, а на ментальной арифметике учебник и счёты абак мы даём бесплатно, покупать ничего не нужно.</p>
+  </section>
+
+  <section id="o-nas">
+    <h2>О центре</h2>
+    <div class="split">
+      <div>
+        <p>«Интеллектиум» работает в Ижевске около десяти лет. Занятия ведёт Роман Васильев — в образовании с 2007 года: воспитатель, учитель-логопед, учитель технологии, советник директора по воспитанию, а теперь преподаватель ментальной арифметики и математики.</p>
+        <p>Мы не обещаем чудес за неделю. Мы даём ребёнку регулярную работу, понятную систему и взрослого рядом, которому интересно, как он думает.</p>
+      </div>
+      <ul>
+        <li>Небольшие группы, каждому хватает внимания.</li>
+        <li>Занятия построены на задачах, а не на переписывании из учебника.</li>
+        <li>Рассказываем родителям, что получается и над чем работаем.</li>
+        <li>Первое занятие бесплатное, чтобы ребёнок понял, нравится ли ему.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="faq">
-    <h2>Вопросы родителей</h2>
-    <details>
-      <summary>С какого класса ребёнок может участвовать в олимпиадах по математике?</summary>
-      <div class="a"><p>С 1 класса — в «Кенгуру» и олимпиаде Учи.ру. Со 2 класса открывается «Бельчонок», с 4 класса — школьный этап Всероссийской олимпиады и олимпиада ЮМШ. Муниципальный (городской) этап ВсОШ по математике начинается с 7 класса.</p><p>Ученик может писать задания и за более старший класс — это разрешено почти во всех олимпиадах.</p></div>
-    </details>
-    <details>
-      <summary>Участие платное?</summary>
-      <div class="a"><p>Почти всё в календаре бесплатно: ВсОШ, ЮМШ, Турнир Ломоносова, Учи.ру, «Бельчонок», олимпиада УдГУ. Платный только «Кенгуру» — небольшой оргвзнос собирает школа.</p></div>
-    </details>
-    <details>
-      <summary>Нужно ли специально готовиться?</summary>
-      <div class="a"><p>Олимпиадные задачи отличаются от школьных: в них нужна логика, перебор вариантов, умение рассуждать и записывать решение. Без подготовки ребёнок часто теряется на первых же задачах, даже если хорошо учится.</p><p>Лучше всего решать задачи прошлых лет — они есть на сайтах олимпиад — и заниматься регулярно, хотя бы раз в неделю.</p></div>
-    </details>
-    <details>
-      <summary>Как записаться?</summary>
-      <div class="a"><p><b>Через школу:</b> школьный этап ВсОШ (коды доступа выдаёт школа), «Кенгуру», второй тур Учи.ру. Сообщите классному руководителю заранее.</p><p><b>Самостоятельно на сайте:</b> ЮМШ, «Бельчонок», Турнир Ломоносова, первый тур Учи.ру. Ссылка на регистрацию — в карточке каждой олимпиады.</p><p><b>Муниципальный этап ВсОШ</b> — по результатам школьного этапа, список участников формирует школа.</p></div>
-    </details>
-    <details>
-      <summary>Что даёт диплом олимпиады?</summary>
-      <div class="a"><p>Опыт и уверенность в первую очередь. Кроме того, результаты олимпиад из перечня Минпросвещения (например, Учи.ру, «Бельчонок») учитываются при поступлении в профильные классы и лицеи, а в старших классах — дают льготы при поступлении в вузы.</p></div>
-    </details>
-    <details>
-      <summary>Откуда эти даты и можно ли им доверять?</summary>
-      <div class="a"><p>Зелёные даты взяты с официальных сайтов организаторов (Сириус, ЮМШ, оргкомитет «Кенгуру», olimpiada.ru). Жёлтые — ориентировочные: организатор ещё не объявил график, и мы указываем сроки по прошлому сезону. Календарь обновляем раз в две недели, но перед олимпиадой всегда проверяйте дату по ссылке в карточке.</p></div>
-    </details>
+  <section>
+    <div class="olymp">
+      <div>
+        <h2>Календарь олимпиад по математике</h2>
+        <p>Собрали все даты сезона 2026/27 для школьников Ижевска, 1–7 класс: школьный и городской этапы ВсОШ, ЮМШ, «Кенгуру», Учи.ру, олимпиада УдГУ. С фильтром по классу и напоминаниями.</p>
+      </div>
+      <div><a class="btn" href="/olimpiady/">Открыть календарь</a></div>
+    </div>
+  </section>
+
+  <section id="kak-prohodyat">
+    <h2>Как проходят занятия</h2>
+    <p class="sub">Абакус, карточки, цветные карандаши и задачи, которые хочется дорешать до конца. Несколько кадров с обычных занятий и с наших соревнований.</p>
+    <div class="gallery">
+      <figure><img src="devochka-pishet.jpg" alt="Девочка выполняет задание по чтению и письму" loading="lazy"><figcaption>Подготовка к школе: слоги, чтение и первые прописи.</figcaption></figure>
+      <figure><img src="malchik-dumaet.jpg" alt="Мальчик обдумывает задание за партой" loading="lazy"><figcaption>Думать вслух — тоже часть работы.</figcaption></figure>
+      <figure><img src="malchik-slogi.jpg" alt="Мальчик читает слоги по карточкам" loading="lazy"><figcaption>Читаем по слогам, пока не станет легко.</figcaption></figure>
+      <figure><img src="prepodavatel-dvoynyashki.jpg" alt="Преподаватель с учениками после соревнований по ментальной арифметике" loading="lazy"><figcaption>После соревнований по ментальной арифметике.</figcaption></figure>
+      <figure><img src="diplom-flesh-turnir.jpg" alt="Ученик с дипломом абсолютного победителя международного флеш-турнира" loading="lazy"><figcaption>Диплом абсолютного победителя международного флеш-турнира.</figcaption></figure>
+      <figure><img src="dvoe-gramoty.jpg" alt="Ученики с грамотами и медалями" loading="lazy"><figcaption>Грамоты за олимпиаду по математике и соревнования по счёту.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="kontakty">
+    <h2>Контакты и запись</h2>
+    <p class="sub">Позвоните или напишите — расскажем про свободные места, расписание и подберём группу по возрасту.</p>
+    <div class="contacts">
+      <div class="cbox">
+        <h3>Как связаться</h3>
+        <p>Телефон и WhatsApp:<br><a href="tel:+79120558606">+7 (912) 055-86-06</a></p>
+        <p>ВКонтакте:<br><a href="https://vk.com/intellectium_izh" target="_blank" rel="noopener">vk.com/intellectium_izh</a></p>
+      </div>
+      <div class="cbox">
+        <h3>Где мы находимся</h3>
+        <p>Ижевск, ул. Михаила Петрова, 33Б — рядом с ТРЦ «Петровский».</p>
+        <p>Время работы: будни с 9:00 до 21:00, суббота с 11:00 до 15:30.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <div><b>Детский центр развития «Интеллектиум»</b><br>Ижевск · ментальная арифметика, олимпиадная математика, подготовка к школе</div>
-    <div><a href="tel:+79120558606">+7 (912) 055-86-06</a> · <a href="https://vk.com/intellectium_izh" target="_blank" rel="noopener">ВКонтакте</a><br>Обновлено 16 сентября 2026</div>
+    <div><b>Детский центр развития «Интеллектиум»</b><br>Ижевск · ментальная арифметика, математика, русский язык, подготовка к школе</div>
+    <div><a href="tel:+79120558606">+7 (912) 055-86-06</a> · <a href="https://vk.com/intellectium_izh" target="_blank" rel="noopener">ВКонтакте</a></div>
   </footer>
 </div>
-
-<script>
-const EVENTS = [
-  {id:"yumsh1", title:"Олимпиада ЮМШ — отборочный тур № 1", start:"2026-09-13", time:"11:00", g:[4,7], fmt:"online", status:"ok",
-   place:"Онлайн, из дома", cost:"бесплатно",
-   note:"Дистанционный отбор на заключительный тур. 5 часов, 10:00–15:00 МСК (11:00–16:00 по Ижевску). Пропустили — есть второй тур 17 октября.",
-   url:"https://yumsh.ru/cms/node/370"},
-  {id:"lomonosov", title:"Турнир Ломоносова", start:"2026-10-04", g:[6,7], fmt:"online", status:"ok",
-   place:"Онлайн или на площадке", cost:"бесплатно",
-   note:"Многопредметный турнир, математика — одна из секций. Для 6–11 классов; заочно можно участвовать с компьютера.",
-   url:"https://olimpiada.ru/activity/4"},
-  {id:"vsosh-s-46", title:"ВсОШ, школьный этап — 4–6 класс", start:"2026-10-14", g:[4,6], fmt:"school", status:"ok",
-   place:"В своей школе, платформа «Сириус.Курсы»", cost:"бесплатно",
-   note:"Первая ступень Всероссийской олимпиады. Удмуртия — в 3-й группе регионов. Код доступа выдаёт школа.",
-   url:"https://siriusolymp.ru/"},
-  {id:"vsosh-s-7", title:"ВсОШ, школьный этап — 7 класс", start:"2026-10-16", g:[7,7], fmt:"school", status:"ok",
-   place:"В своей школе, платформа «Сириус.Курсы»", cost:"бесплатно",
-   note:"Набравшие проходной балл идут на муниципальный этап в Ижевске.",
-   url:"https://siriusolymp.ru/"},
-  {id:"yumsh2", title:"Олимпиада ЮМШ — отборочный тур № 2", start:"2026-10-17", time:"17:00", g:[4,7], fmt:"online", status:"ok",
-   place:"Онлайн, из дома", cost:"бесплатно",
-   note:"16:00–21:00 МСК (17:00–22:00 по Ижевску). Хороший результат в любом из двух туров — приглашение на заключительный тур.",
-   url:"https://yumsh.ru/cms/yumsh-olymp/2026-27"},
-  {id:"belch-q", title:"«Бельчонок» — отборочный этап", start:"2026-10-01", end:"2027-01-13", label:"окт — янв", g:[2,7], fmt:"online", status:"approx",
-   place:"Онлайн, из дома", cost:"бесплатно",
-   note:"Олимпиада Сибирского федерального университета из перечня Минпросвещения. Задания решают онлайн в течение нескольких месяцев. Сроки — по прошлому сезону.",
-   url:"https://dovuz.sfu.ru/abiturientu-sfu/olimpiady/belchonok/2026-2027-uchebnyy-god/"},
-  {id:"vsosh-m", title:"ВсОШ, муниципальный этап (городской)", start:"2026-12-10", label:"начало дек", g:[7,7], fmt:"city", status:"approx",
-   place:"Ижевск, площадки ИМЦ «Альтернатива»", cost:"бесплатно",
-   note:"Для прошедших школьный этап. Этап идёт со 2 ноября по 25 декабря; в 2025 году математика была 10 декабря. Точную дату объявит Минобрнауки УР.",
-   url:"https://alt.izh.one/content/muniipalny_jetap.html"},
-  {id:"yumsh-f7", title:"Олимпиада ЮМШ — заключительный тур, 7 класс", start:"2026-12-13", g:[7,7], fmt:"city", status:"ok",
-   place:"Ижевск, ДК «Металлург» (ул. Карла Маркса, 246) — площадка прошлого сезона", cost:"бесплатно",
-   note:"Регистрация на тур — до 23:59 12 декабря. Возьмите документ с фотографией. Адрес площадки уточняйте на сайте ЮМШ.",
-   url:"https://yumsh.ru/cms/yumsh-olymp/2026-27"},
-  {id:"uchi1", title:"Олимпиада Учи.ру по математике — I тур", start:"2027-01-13", end:"2027-02-09", label:"янв — фев", g:[1,7], fmt:"online", status:"approx",
-   place:"Онлайн, дома или в школе", cost:"бесплатно",
-   note:"Самая доступная олимпиада для начальной школы, 1 час. Входит в перечень Минпросвещения. График на новый сезон организатор опубликует в декабре.",
-   url:"https://math-olymp.uchi.ru/"},
-  {id:"yumsh-f46", title:"Олимпиада ЮМШ — заключительный тур, 4–6 класс", start:"2027-01-17", g:[4,6], fmt:"city", status:"ok",
-   place:"Ижевск, ДК «Металлург» (ул. Карла Маркса, 246) — площадка прошлого сезона", cost:"бесплатно",
-   note:"Регистрация на тур — до 23:59 16 января. Адрес площадки уточняйте на сайте ЮМШ.",
-   url:"https://yumsh.ru/cms/yumsh-olymp/2026-27"},
-  {id:"belch-f", title:"«Бельчонок» — заключительный этап", start:"2027-02-14", label:"сер. фев", g:[2,7], fmt:"online", status:"approx",
-   place:"Уточняется организатором", cost:"бесплатно",
-   note:"Для прошедших отборочный этап. В прошлом сезоне — 15 февраля.",
-   url:"https://dovuz.sfu.ru/abiturientu-sfu/olimpiady/belchonok/2026-2027-uchebnyy-god/"},
-  {id:"uchi2", title:"Олимпиада Учи.ру по математике — II тур", start:"2027-03-16", label:"сер. мар", g:[1,7], fmt:"school", status:"approx",
-   place:"В своей школе, под присмотром учителя", cost:"бесплатно",
-   note:"Для набравших проходной балл в I туре. Победа вносится в государственный реестр выдающихся способностей.",
-   url:"https://math-olymp.uchi.ru/"},
-  {id:"kenguru", title:"Международный конкурс «Кенгуру»", start:"2027-03-18", g:[1,7], fmt:"school", status:"ok",
-   place:"В своей школе", cost:"оргвзнос через школу",
-   note:"Любимый конкурс младших школьников: задачи на сообразительность с вариантами ответов. Школа должна подать заявку заранее — спросите учителя уже в феврале.",
-   url:"https://ipokengu.ru/"},
-  {id:"udsu", title:"Олимпиада УдГУ по математике", start:"2027-04-03", label:"нач. апр", g:[7,7], fmt:"city", status:"approx",
-   place:"Ижевск, УдГУ или школа-площадка", cost:"бесплатно",
-   note:"Олимпиада Института математики, ИТ и физики УдГУ для 7–11 классов, 2,5 часа для 7–9 классов. В 2026 году — 4 апреля.",
-   url:"https://f-imitf.udsu.ru/abiturientu/olimpiada-po-matematike-sredi-shkolnikov-7-11-klassov"}
-];
-
-const MONTHS = ["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"];
-const MON_GEN = ["янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"];
-const FMT = {city:"Очно в Ижевске", school:"В школе", online:"Онлайн"};
-const state = {grade:0, fmt:"all", past:false};
-try{ const s = JSON.parse(localStorage.getItem("olymp-izh")||"{}"); if(s.grade!=null) state.grade=s.grade; if(s.fmt) state.fmt=s.fmt; }catch(e){}
-
-const d = s => { const [y,m,dd]=s.split("-").map(Number); return new Date(y,m-1,dd); };
-const today = (()=>{ const n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); })();
-const endOf = e => d(e.end||e.start);
-const isPast = e => endOf(e) < today;
-const gradeTxt = g => g[0]===g[1] ? g[0]+" класс" : g[0]+"–"+g[1]+" класс";
-function plural(n,a,b,c){ const m10=n%10,m100=n%100; if(m10===1&&m100!==11) return a; if(m10>=2&&m10<=4&&(m100<10||m100>=20)) return b; return c; }
-
-function card(e){
-  const s=d(e.start), past=isPast(e);
-  const dateBox = e.label
-    ? `<div class="date range"><div class="d">${e.label}</div>${e.end?"":`<div class="t">${s.getFullYear()}</div>`}</div>`
-    : `<div class="date"><div class="d">${s.getDate()}</div><div class="m">${MON_GEN[s.getMonth()]}</div>${e.time?`<div class="t">${e.time} Ижевск</div>`:""}</div>`;
-  const ongoing = e.end && d(e.start)<=today && !past;
-  return `<article class="ev ${e.status==="approx"?"approx":""} ${past?"past":""}" id="ev-${e.id}">
-    ${dateBox}
-    <div>
-      <h3>${e.title}</h3>
-      <div class="tags">
-        <span class="tag">${gradeTxt(e.g)}</span>
-        <span class="tag">${FMT[e.fmt]}</span>
-        <span class="tag">${e.cost}</span>
-        <span class="tag ${e.status==="ok"?"st-ok":"st-approx"}">${past?"прошла":ongoing?"идёт сейчас":e.status==="ok"?"дата подтверждена":"ориентировочно"}</span>
-      </div>
-      <p><b style="color:var(--ink);font-weight:600">${e.place}.</b> ${e.note}</p>
-      <a class="go" href="${e.url}" target="_blank" rel="noopener">Сайт олимпиады и регистрация →</a>
-    </div>
-  </article>`;
-}
-
-function render(){
-  const match = e => (state.grade===0 || (state.grade>=e.g[0] && state.grade<=e.g[1])) && (state.fmt==="all" || e.fmt===state.fmt);
-  const all = EVENTS.filter(match).sort((a,b)=>d(a.start)-d(b.start));
-  const shown = all.filter(e => state.past || !isPast(e));
-  const list = document.getElementById("list");
-  if(!shown.length){
-    list.innerHTML = `<div class="empty">По этим фильтрам предстоящих олимпиад нет. Попробуйте другой формат${all.length?" или включите «Показать прошедшие»":""}.</div>`;
-  } else {
-    let html="", cur="";
-    for(const e of shown){
-      const s=d(e.start); const key=MONTHS[s.getMonth()]+" "+s.getFullYear();
-      if(key!==cur){ html+=`<h2 class="month">${key}</h2>`; cur=key; }
-      html+=card(e);
-    }
-    list.innerHTML=html;
-  }
-  // nearest single-day upcoming event for chosen grade
-  const up = EVENTS.filter(e => (state.grade===0 || (state.grade>=e.g[0]&&state.grade<=e.g[1])) && !e.label && d(e.start)>=today).sort((a,b)=>d(a.start)-d(b.start))[0];
-  const nd=document.getElementById("nextDays"), nw=document.getElementById("nextWhat");
-  if(up){
-    const n=Math.round((d(up.start)-today)/864e5);
-    nd.textContent = n===0 ? "сегодня" : n===1 ? "завтра" : `через ${n} ${plural(n,"день","дня","дней")}`;
-    nw.textContent = up.title + " · " + d(up.start).getDate() + " " + MON_GEN[d(up.start).getMonth()];
-  } else { nd.textContent="—"; nw.textContent="Сезон завершён"; }
-  document.querySelectorAll("[data-grade]").forEach(b=>b.setAttribute("aria-pressed", String(+b.dataset.grade===state.grade)));
-  document.querySelectorAll("[data-fmt]").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.fmt===state.fmt)));
-  try{ localStorage.setItem("olymp-izh", JSON.stringify({grade:state.grade, fmt:state.fmt})); }catch(e){}
-}
-document.querySelectorAll("[data-grade]").forEach(b=>b.addEventListener("click",()=>{state.grade=+b.dataset.grade;render();}));
-document.querySelectorAll("[data-fmt]").forEach(b=>b.addEventListener("click",()=>{state.fmt=b.dataset.fmt;render();}));
-document.getElementById("showPast").addEventListener("change",e=>{state.past=e.target.checked;render();});
-render();
-</script>
-
 </body>
 </html>
