@@ -90,6 +90,13 @@ footer b{color:var(--ink)}
 
 .news{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
 .news-fallback{color:var(--muted);font-size:15px;margin:10px 0 0}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.review p{margin:0 0 14px;font-size:16px}
+.review .who{margin-top:auto;font-size:14px;color:var(--muted);font-weight:600}
+.rating{display:flex;align-items:baseline;gap:12px;margin:0 0 18px;flex-wrap:wrap}
+.rating b{font-family:var(--display);font-size:34px;color:var(--brand);line-height:1}
+.rating span{color:var(--muted);font-size:15px}
 .todo{background:var(--sun-soft);color:var(--sun-ink);border:1px dashed var(--sun);border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600;margin-bottom:18px}
 
 @media (max-width:820px){
@@ -105,6 +112,7 @@ footer b{color:var(--ink)}
     <nav class="menu">
       <a href="#napravleniya">Направления</a>
       <a href="/olimpiady/">Олимпиады</a>
+      <a href="#otzyvy">Отзывы</a>
       <a href="#novosti">Новости</a>
       <a href="#o-nas">О центре</a>
       <a href="#kontakty">Контакты</a>
@@ -143,6 +151,7 @@ footer b{color:var(--ink)}
         <span class="age">6–12 лет</span>
         <p>Счёт на абакусе и в уме. Развивает внимание, память и скорость мышления. Через несколько месяцев ребёнок считает быстрее взрослого.</p>
         <div class="price"><b>3 900 ₽</b> <s>4 500 ₽</s><br><em>абонемент на 4 занятия</em></div>
+        <a class="go" href="/mentalnaya-arifmetika/" style="display:inline-block;margin-top:10px;font-weight:700;text-decoration:none">Подробнее о курсе →</a>
       </article>
       <article class="card">
         <h3>Олимпиадная математика</h3>
@@ -233,6 +242,17 @@ footer b{color:var(--ink)}
       <figure><img src="diplom-flesh-turnir.jpg" alt="Ученик с дипломом абсолютного победителя международного флеш-турнира" loading="lazy"><figcaption>Диплом абсолютного победителя международного флеш-турнира.</figcaption></figure>
       <figure><img src="dvoe-gramoty.jpg" alt="Ученики с грамотами и медалями" loading="lazy"><figcaption>Грамоты за олимпиаду по математике и соревнования по счёту.</figcaption></figure>
     </div>
+  </section>
+
+  <section id="otzyvy">
+    <h2>Отзывы родителей</h2>
+    <div class="rating"><b>4,9</b><span>средняя оценка на Яндекс Картах, 23 отзыва</span></div>
+    <div class="reviews">
+      <div class="review"><p>«Ходили на курсы подготовки к школе — остались очень довольны! Ребёнок занимался с большим интересом».</p><div class="who">Алёна Лизяева</div></div>
+      <div class="review"><p>«Наш учитель по ментальной арифметике — настоящий профессионал! Занятия проходят интересно и продуктивно».</p><div class="who">Ирина</div></div>
+      <div class="review"><p>«Наш ребёнок с большим удовольствием занимается с преподавателем Романом по ментальной арифметике».</p><div class="who">Надежда Корепанова</div></div>
+    </div>
+    <p class="sub" style="margin-top:16px"><a href="https://yandex.ru/maps/org/intellektium/12342435096/" target="_blank" rel="noopener"><b>Читать все отзывы на Яндекс Картах →</b></a></p>
   </section>
 
   <section id="novosti">
